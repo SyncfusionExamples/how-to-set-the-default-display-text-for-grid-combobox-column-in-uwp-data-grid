@@ -4,7 +4,8 @@ How to set the default display text for GridComboBox column in UWP DataGrid (SfD
 
 # About the sample
 
-In default, SfDataGrid GridComboBoxColumn does not have direct support to display default text on it when there is no selected Item. You can change default text using ComboBoxValueConverter and DisplayBinding property of the column.
+In SfDataGrid, GridComboBoxColumn does not have direct support to display default text on it when there is no selected Item. You can change default text using ComboBoxValueConverter and DisplayBinding property of the column.
+
 ```Xaml
 <Page.Resources>
     <local:ComboBoxValueConverter x:Key="comboBoxValueConverter"/>
