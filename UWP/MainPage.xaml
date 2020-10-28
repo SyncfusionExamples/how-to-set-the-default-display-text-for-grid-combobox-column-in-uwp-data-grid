@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:syncfusion1="using:Syncfusion.UI.Xaml.TreeGrid"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <local:ComboBoxValueConverter x:Key="comboBoxValueConverter"/>
+    </Page.Resources>
+    <Grid>
+        <syncfusion:SfDataGrid Name="dataGrid"
+                               AutoGenerateColumns="False"
+                               AllowEditing="True"
+                               ColumnSizer="Auto"
+                               ItemsSource="{Binding Employees}">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="FirstName" HeaderText="First Neme" ColumnFilter="DisplayText" />
+                <syncfusion:GridTextColumn  MappingName="LastName" HeaderText="Last Name" />
+                <syncfusion:GridTextColumn MappingName="ID"/>
+                <syncfusion:GridTextColumn  MappingName="Title" />
+                <syncfusion:GridTextColumn  MappingName="Salary" />
+                <syncfusion:GridComboBoxColumn MappingName="ReportsTo" HeaderText="Reports To" ItemsSource="{Binding Reporters}" DisplayBinding="{Binding Path=ReportsTo, Converter={StaticResource comboBoxValueConverter}}"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Page>
