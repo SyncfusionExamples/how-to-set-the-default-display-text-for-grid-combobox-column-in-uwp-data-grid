@@ -1,12 +1,11 @@
-# How to set the default display text for GridComboBox column in UWP DataGrid (SfDataGrid)?
+# How to Set the Default Display Text for GridComboBoxColumn in UWP DataGrid?
 
-How to set the default display text for GridComboBox column in UWP DataGrid (SfDataGrid)?
+This sample illustrates how to set the default display text for [GridComboBoxColumn](https://help.syncfusion.com/cr/uwp/Syncfusion.UI.Xaml.Grid.GridComboBoxColumn.html) in [UWP DataGrid](https://www.syncfusion.com/uwp-ui-controls/datagrid) (SfDataGrid).
 
-# About the sample
+In `DataGrid`, `GridComboBoxColumn` does not have direct support to display default text on it when there is no selected Item. You can change default text using ComboBoxValueConverter and DisplayBinding property of the column.
 
-In SfDataGrid, GridComboBoxColumn does not have direct support to display default text on it when there is no selected Item. You can change default text using ComboBoxValueConverter and DisplayBinding property of the column.
-
-```Xaml
+#### XAML
+``` xml
 <Page.Resources>
     <local:ComboBoxValueConverter x:Key="comboBoxValueConverter"/>
 </Page.Resources>
@@ -26,6 +25,7 @@ In SfDataGrid, GridComboBoxColumn does not have direct support to display defaul
 </syncfusion:SfDataGrid>
 ```
 
+#### C#
 ```c#
 public class ComboBoxValueConverter : IValueConverter
 {
@@ -42,5 +42,8 @@ public class ComboBoxValueConverter : IValueConverter
     }
 }
 ```
+
+![Showing the defualt display text in the Reports To GridComboBoxColumn](DisplayTextInReportToColumn.png)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
